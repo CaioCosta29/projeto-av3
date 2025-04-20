@@ -4,6 +4,8 @@ import com.projeto_av3.projeto_av3.model.Usuario;
 import com.projeto_av3.projeto_av3.repository.UsuarioRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
@@ -14,5 +16,9 @@ public class UsuarioService {
 
     public void salvarUsuario(Usuario usuario) {
         usuarioRepository.save(usuario);
+    }
+
+    public List<Usuario> getAllUsuario() {
+        return usuarioRepository.findAll();
     }
 }

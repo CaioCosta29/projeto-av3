@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://thyneleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Violência contra a mulher</title>
 </head>
 <body>
-  <nav class="navbar">
-
-    <h1 class="nav__logo">Violencia contra a mulher</h1>
-
+<nav class="navbar">
+    <h1 class="nav__logo">Violência contra a mulher</h1>
     <ul class="nav__links">
-      <li><a href="#">Home</a></li>
-      <li><a  th:href="@{usuario/cadastrar}">Criar conta</a></li>
-      <li><a href="#">Visualizar contas</a></li>
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/usuario/cadastrar}">Criar conta</a></li>
+        <li><a th:href="@{/usuario/visualizar}">Visualizar contas</a></li>
     </ul>
-  </nav>
+</nav>
 </body>
 </html>

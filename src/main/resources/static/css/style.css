@@ -1,6 +1,7 @@
 @import url("/css/estilos/navbar.css");
 @import url("/css/estilos/home.css");
 @import url("/css/estilos/cadastrar.css");
+@import url("/css/estilos/table.css");
 
 * {
     margin: 0;

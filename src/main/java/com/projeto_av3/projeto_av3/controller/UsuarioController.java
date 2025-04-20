@@ -3,11 +3,10 @@ package com.projeto_av3.projeto_av3.controller;
 
 import com.projeto_av3.projeto_av3.model.Endereco;
 import com.projeto_av3.projeto_av3.model.Usuario;
-import com.projeto_av3.projeto_av3.model.enums.Genero;
 import com.projeto_av3.projeto_av3.service.EnderecoService;
 import com.projeto_av3.projeto_av3.service.UsuarioService;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +29,12 @@ public class UsuarioController {
     @GetMapping("/cadastrar")
     public String criarConta() {
         return "usuario/cadastrar";
+    }
+
+    @GetMapping("/visualizar")
+    public String visualizarConta(Model model) {
+        model.addAttribute("usuarios", usuarioService.getAllUsuario());
+        return "usuario/visualizar";
     }
 
     @PostMapping("/salvar")
