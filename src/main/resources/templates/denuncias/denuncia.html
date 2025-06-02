@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Denúncia Rápida</title>
+    <link th:href="@{/css/estilos/denuncia-rapida.css}" rel="stylesheet"/>
+    <link th:href="@{/css/estilos/navbar.css}" rel="stylesheet"/>
+</head>
+<body>
+    <nav th:replace="~{fragmentos/navbar}"></nav>
+
+    <main class="container">
+        <h1>Denúncia Rápida</h1>
+
+        <form th:action="@{/denuncias/denuncia-rapida/salvar}" method="post" class="sessao">
+            <label for="data">Data e hora*</label>
+            <input
+                    type="datetime-local"
+                    id="data"
+                    name="data"
+                    required
+            />
+
+            <label for="tipoViolencia">Tipo de Violência*</label>
+            <input
+                    type="text"
+                    id="tipoViolencia"
+                    name="tipoViolencia"
+                    maxlength="11"
+                    placeholder="Ex.: Física, Psicológica..."
+                    required
+            />
+
+            <label>Denunciante é vítima?*</label>
+            <div>
+                <label>
+                    <input
+                            type="radio"
+                            name="denuncianteEVitima"
+                            value="true"
+                            required
+                    />
+                    Sim
+                </label>
+                <label>
+                    <input
+                            type="radio"
+                            name="denuncianteEVitima"
+                            value="false"
+                    />
+                    Não
+                </label>
+            </div>
+
+            <label>Possui vínculo com o agressor?*</label>
+            <div>
+                <label>
+                    <input
+                            type="radio"
+                            name="possuiVinculoAgressor"
+                            value="true"
+                            required
+                    />
+                    Sim
+                </label>
+                <label>
+                    <input
+                            type="radio"
+                            name="possuiVinculoAgressor"
+                            value="false"
+                    />
+                    Não
+                </label>
+            </div>
+
+            <label>Agressor armado?*</label>
+            <div>
+                <label>
+                    <input
+                            type="radio"
+                            name="agressorArmado"
+                            value="true"
+                            required
+                    />
+                    Sim
+                </label>
+                <label>
+                    <input
+                            type="radio"
+                            name="agressorArmado"
+                            value="false"
+                    />
+                    Não
+                </label>
+            </div>
+
+            <label for="localizacao">Localização*</label>
+            <input
+                    type="text"
+                    id="localizacao"
+                    name="localizacao"
+                    maxlength="150"
+                    placeholder="Ex.: Rua X, Bairro Y"
+                    required
+            />
+
+            <label for="pontoReferencia">Ponto de Referência*</label>
+            <input
+                    type="text"
+                    id="pontoReferencia"
+                    name="pontoReferencia"
+                    maxlength="100"
+                    placeholder="Ex.: Próximo ao posto de saúde"
+                    required
+            />
+
+            <label for="descricaoAgressor">Descrição do agressor*</label>
+            <textarea
+                    id="descricaoAgressor"
+                    name="descricaoAgressor"
+                    maxlength="200"
+                    rows="4"
+                    placeholder="Descreva características do agressor..."
+                    required
+            ></textarea>
+
+            <button type="submit">Enviar Denúncia</button>
+        </form>
+    </main>
+</body>
+</html>

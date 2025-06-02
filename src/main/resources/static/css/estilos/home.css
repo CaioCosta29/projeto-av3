@@ -1,0 +1,57 @@
+.main-content {
+    height: 91vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 3em 2.5em;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    width: 350px;
+    text-align: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    margin-top: 1.5em;
+}
+
+input[type="text"],
+input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0.8em 0;
+    outline: none;
+    font-size: 1em;
+}
+
+input:focus {
+    border-color: #0072ff;
+}
+
+button {
+    margin-top: 1em;
+    padding: 0.8em;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    color: white;
+    font-size: 1em;
+}
+
+.create__account {
+    display: block;
+    margin-top: 3.5em;
+    font-size: 0.9em;
+    color: #888;
+    text-decoration: none;
+}
+
+.create__account:hover {
+    text-decoration: underline;
+}

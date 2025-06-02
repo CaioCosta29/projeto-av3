@@ -1,0 +1,17 @@
+@import url("/css/estilos/navbar.css");
+@import url("/css/estilos/home.css");
+@import url("/css/estilos/cadastrar.css");
+@import url("/css/estilos/table.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f2f2f2;
+}
+
+

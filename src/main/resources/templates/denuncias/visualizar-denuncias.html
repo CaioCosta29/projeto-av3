@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Minhas Denúncias</title>
+    <link th:href="@{/css/estilos/visualizar-denuncias.css}" rel="stylesheet"/>
+    <link th:href="@{/css/estilos/navbar.css}" rel="stylesheet">
+</head>
+<body>
+    <nav th:replace="~{fragmentos/navbar}"></nav>
+
+    <main class="container">
+        <h1>Minhas Denúncias</h1>
+
+        <section>
+            <h2>Denúncias Rápidas</h2>
+            <ul class="lista">
+                <!-- Itera sobre a coleção de denúncias rápidas do usuário -->
+                <li th:each="d : ${denunciasRapidas}">
+                    <span th:text="${#temporals.format(d.data,'dd/MM/yyyy HH:mm')}">DD/MM/AAAA HH:mm</span> –
+                    <span th:text="${d.tipoViolencia}">Tipo de Violência</span>
+                </li>
+                <!-- Se não houver itens, exibe uma mensagem única -->
+                <li th:if="${denunciasRapidas.empty}">Nenhuma denúncia rápida registrada.</li>
+            </ul>
+        </section>
+
+        <!-- Seção: Boletins de Ocorrência -->
+        <section>
+            <h2>Boletins de Ocorrência</h2>
+            <ul class="lista">
+                <!-- Itera sobre a coleção de boletins do usuário -->
+                <li th:each="b : ${boletins}">
+                    <span th:text="${#temporals.format(b.data,'dd/MM/yyyy HH:mm')}">DD/MM/AAAA HH:mm</span> –
+                    <span th:text="${b.vitimaNome}">Nome da Vítima</span>
+                </li>
+                <!-- Se não houver itens, exibe uma mensagem única -->
+                <li th:if="${boletins.empty}">Nenhum boletim de ocorrência registrado.</li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>

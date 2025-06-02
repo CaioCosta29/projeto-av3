@@ -1,0 +1,57 @@
+/* Container centralizado com largura máxima simples */
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Título principal */
+.container h1 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Cada seção terá um pequeno espaçamento */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Título de seção (Denúncias Rápidas / Boletins) */
+section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.25rem;
+}
+
+/* Lista simples de itens */
+ul.lista {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+/* Cada item da lista */
+ul.lista li {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Mensagem de lista vazia */
+ul.lista li[th\\:if] {
+  font-style: italic;
+  color: #777;
+  text-align: center;
+  border: none;
+  background: none;
+}

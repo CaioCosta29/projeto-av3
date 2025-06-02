@@ -1,0 +1,121 @@
+/* Container principal, centralizado e com largura máxima */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Título principal */
+.container h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* Cada “sessão” do formulário — aqui usamos apenas uma, mas mantemos a classe .sessao para consistência */
+.sessao {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo dos rótulos (labels) */
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #333;
+}
+
+/* Inputs de texto, datetime-local, número, etc. */
+input[type="text"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="radio"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Textarea com controle de altura */
+textarea {
+  resize: vertical; /* permite o usuário redimensionar verticalmente */
+  min-height: 4rem;
+  font-family: inherit;
+}
+
+/* Campos de radio funcionam em linha, mas com espaçamento */
+.sessao input[type="radio"] {
+  width: auto;
+  margin-top: 0;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Agrupamento de botões “Sim/Não” ou caixas em linha */
+.sessao > div > label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1rem;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+/* Botão de envio — destaca-se do fundo */
+button[type="submit"] {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Hover no botão */
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Mensagem de erro / validação (caso queira exibir no futuro) */
+.error-message {
+  color: #d9534f;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsividade: em telas menores reduz a largura dos inputs para caber melhor */
+@media (max-width: 600px) {
+  .container {
+    padding: 0.5rem;
+  }
+
+  input, textarea {
+    font-size: 0.9rem;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+  }
+}

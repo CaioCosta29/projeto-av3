@@ -1,0 +1,30 @@
+/* separa a tabela do navbar e centraliza */
+table {
+  margin: 2rem auto 0;        /* 2rem de distância do topo, e auto nas laterais para centralizar */
+  border-collapse: collapse;  /* remove espaçamento duplo das bordas */
+  width: 90%;                 /* opcional: define largura em relação ao container */
+  max-width: 1200px;          /* opcional: limita a largura máxima */
+}
+
+/* estilo das células */
+th, td {
+  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+/* cabeçalho mais destacado */
+th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+/* linhas zebras para facilitar leitura */
+tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* hover suave */
+tbody tr:hover {
+  background-color: #f1f1f1;
+}

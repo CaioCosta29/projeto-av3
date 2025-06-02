@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Boletim de Ocorrência</title>
+    <link th:href="@{/css/estilos/boletim.css}" rel="stylesheet">
+    <link th:href="@{/css/estilos/navbar.css}" rel="stylesheet">
+</head>
+<body>
+    <nav th:replace="~{fragmentos/navbar}"></nav>
+
+    <main class="container">
+        <h1>Boletim de Ocorrência</h1>
+
+        <form th:action="@{/denuncias/boletim/salvar}" method="post" id="formBoletim">
+            <div id="etapa-1" class="ativo sessao">
+                <h2>1. Dados da Ocorrência</h2>
+
+                <label for="dataHoraOcorrencia">Data e hora*</label>
+                <input type="datetime-local" id="dataHoraOcorrencia" name="dataHoraOcorrencia" required>
+
+                <label for="nomeVitima">Nome da vítima*</label>
+                <input type="text" id="nomeVitima" name="nomeVitima" maxlength="120" required>
+
+                <label for="idadeVitima">Idade*</label>
+                <input type="number" id="idadeVitima" name="idadeVitima" min="0" required>
+
+                <label for="cpfVitima">CPF da vítima*</label>
+                <input type="text" id="cpfVitima" name="cpfVitima" maxlength="14" placeholder="00000000000" required>
+
+                <label for="telefoneVitima">Telefone*</label>
+                <input type="text" id="telefoneVitima" name="telefoneVitima" maxlength="14" placeholder="(00)00000-0000" required>
+
+                <label for="lesoesEvidencias">Lesões ou evidências</label>
+                <textarea id="lesoesEvidencias" name="lesoesEvidencias" maxlength="500" rows="3"></textarea>
+
+                <label for="descricaoFatos">Descrição dos fatos*</label>
+                <textarea id="descricaoFatos" name="descricaoFatos" maxlength="2000" rows="5" required></textarea>
+
+                <div>
+                    <span>Agressor armado?*</span>
+                    <label>
+                        <input type="radio"
+                               name="agressorArmado"
+                               value="true"
+                               required> Sim
+                    </label>
+                    <label>
+                        <input type="radio"
+                               name="agressorArmado"
+                               value="false"> Não
+                    </label>
+                </div>
+
+                <div>
+                    <span>Possui vínculo com o agressor?*</span>
+                    <label>
+                        <input type="radio"
+                               name="vinculoAgressor"
+                               value="true"
+                               required> Sim
+                    </label>
+                    <label>
+                        <input type="radio"
+                               name="vinculoAgressor"
+                               value="false"> Não
+                    </label>
+                </div>
+
+                <button type="button" id="btnProxima">Próxima etapa</button>
+            </div>
+
+            <!-- ETAPA 2: ENDEREÇO -->
+            <div id="etapa-2" class="sessao">
+                <h2>2. Endereço</h2>
+
+                <label for="cep">CEP*</label>
+                <input type="text" id="cep" name="cep" maxlength="9" placeholder="12345-678" required onblur="buscarEndereco(this.value)">
+
+                <label for="logradouro">Logradouro*</label>
+                <input type="text" id="logradouro" name="logradouro" maxlength="100" readonly required>
+
+                <label for="numeroEndereco">Número*</label>
+                <input type="number" id="numeroEndereco" name="numeroEndereco" max="9999999999" required>
+
+                <label for="bairro">Bairro*</label>
+                <input type="text" id="bairro" name="bairro" maxlength="100" readonly required>
+
+                <label for="municipio">Município*</label>
+                <input type="text" id="municipio" name="municipio" maxlength="100" readonly required>
+
+                <label for="estado">Estado*</label>
+                <input type="text" id="estado" name="estado" maxlength="50" readonly required>
+
+                <label for="complementoEndereco">Complemento*</label>
+                <input type="text" id="complementoEndereco" name="complementoEndereco" maxlength="100" required>
+
+                <button type="button" id="btnVoltar">Voltar</button>
+                <button type="submit">Enviar boletim</button>
+            </div>
+        </form>
+    </main>
+
+    <script th:src="@{/js/boletim.js}" defer></script>
+</body>
+</html>

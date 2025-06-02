@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br"  xmlns:th="https://thyneleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+
+  <main class="main-content">
+
+    <div class="container">
+
+      <h1>Log in</h1>
+
+      <form method="post" th:action="@{/entrar}" class="login">
+        <input type="text" placeholder="Email" name="email">
+        <input type="password" placeholder="Password" name="senha">
+        <button type="submit">LOGIN</button>
+      </form>
+
+      <a th:href="@{/cadastrar}" class="create__account">Sign Up</a>
+    </div>
+
+  </main>
+
+</body>
+</html>
